@@ -26,4 +26,13 @@ router.get('/question2',function(req,res){
     })
 })
 
+//QUESTION THREE
+router.get('/question3',function(req,res){
+    console.log("Question 3");
+    connection.query('select country,high,low from temperature',(err,results)=>{
+        console.log("Question 3 values fetch");
+        res.render('Question3',{userData:results});
+    })
+})
+
 module.exports = router;

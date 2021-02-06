@@ -8,27 +8,25 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="con">
-        <h1>Products</h1>
+    <div>
+        <h1>Temperature</h1>
         <table class="tbl">
             <tr>
-                <th>Id</th>
-                <th>Product Name</th>
-                <th>Brand</th>
-                <th>Price</th>
+                <th>Country</th>
+                <th>High</th>
+                <th>Low</th>
             </tr>
             <% if(userData.length !=0){ %>
                 <% userData.forEach((results) => { %>
             <tr>
-                <td><%= results.id %></td>
-                <td><%= results.prodname %></td>
-                <td><%= results.brand %></td>
-                <td><%= results.price %></td>
+                <td><%= results.country %></td>
+                <td><%= results.high %></td>
+                <td><%= results.low %></td>
             </tr>
             <% }); %>
             <% } else{ %>
             <tr>
-                <td colspan="4">No data found</td>
+                <td colspan="3">No data found</td>
             </tr>
             <% } %> 
         </table>
