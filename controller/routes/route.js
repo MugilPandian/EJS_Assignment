@@ -17,4 +17,13 @@ router.get('/question1',function(req,res){
     })
 })
 
+//QUESTION TWO
+router.get('/question2',function(req,res){
+    console.log("Question 2");
+    connection.query('select * from Products where price>16000',(err,results)=>{
+        console.log("Question 2 values fetch");
+        res.render('Question2',{userData:results});
+    })
+})
+
 module.exports = router;
