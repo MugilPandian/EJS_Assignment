@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="con">
+        <h1>Mark-Sheet</h1>
+        <table class="tbl">
+            <tr>
+                <th>Name</th>
+                <th>Rollno</th>
+                <th>Date of Exam</th>
+                <th>M1</th>
+                <th>M2</th>
+                <th>M3</th>
+            </tr>
+            <% if(userData.length !=0){ %>
+                <% userData.forEach((results) => { %>
+            <tr>
+                <td><%= results.name %></td>
+                <td><%= results.rollno %></td>
+                <% var datemonth=results.dateofexam.getMonth()+1 %>
+                <td><%= results.dateofexam.getDate()+"/"+datemonth+"/"+results.dateofexam.getFullYear() %></td>
+                <td><%= results.m1 %></td>
+                <td><%= results.m2 %></td>
+                <td><%= results.m3 %></td>
+            </tr>
+            <% }); %>
+            <% } else{ %>
+            <tr class="table-danger">
+                <td colspan="9">No data found</td>
+            </tr>
+            <% } %> 
+        </table>
+    </div>
+</body>
+</html>
